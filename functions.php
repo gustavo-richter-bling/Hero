@@ -22,11 +22,6 @@ require_once get_template_directory() . '/inc/customizer.php';
    wp_enqueue_style( 'rajdhani', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script' );
    wp_enqueue_style( 'crimson ', 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' );
    wp_enqueue_style( 'dancing', 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap' );
-      
-   // Flexslider
-   wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/inc/flexslider/flexslider.css', array(), '2.7.2', 'all' );
-   wp_enqueue_script( 'flexslider-min-js', get_template_directory_uri() . '/inc/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '2.7.2', true );
-   wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/inc/flexslider/flexslider.js', array( 'jquery' ), '2.7.2', true );
 
  }
 add_action( 'wp_enqueue_scripts', 'hero_theme_scripts' );

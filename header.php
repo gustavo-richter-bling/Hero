@@ -21,26 +21,28 @@
 		<header>
 			<section class="search">
 				<div class="container">
-					<div class="text-center d-md-flex align-items-center">
-						<?php get_search_form(); ?>
+					<div class="row d-flex align-items-center">
+						<div class="col-12 col-md-3 col-lg-2 brand text-center text-md-left">
+							<a href="<?php echo esc_url( home_url('/') );?>">
+								<?php 
+								if( has_custom_logo() ):
+									the_custom_logo();
+								else:    
+								?>
+									<p class="site-title"><?php bloginfo( 'title' );?></p>
+									<span ><?php bloginfo( 'description' );?></span>   
+								<?php endif;?>
+							</a>
+						</div>
+						<div class="col-12 col-md-8 col-lg-8 text-center d-md-flex align-items-center">
+							<?php get_search_form(); ?>
+						</div>
 					</div>
 				</div>
 			</section>			
 			<section class="top-bar">
 				<div class="container">
 					<div class="row d-flex align-items-center">
-						<div class="col-12 col-md-3 col-lg-2 brand text-center text-md-left">
-							<a href="<?php echo esc_url( home_url('/') );?>">
-								<?php 
-	                            if( has_custom_logo() ):
-	                                the_custom_logo();
-	                            else:    
-	                            ?>
-	                                <p class="site-title"><?php bloginfo( 'title' );?></p>
-	                                <span ><?php bloginfo( 'description' );?></span>   
-	                            <?php endif;?>
-							</a>
-						</div>
 						<div class="col-12 col-md-9 col-lg-10 second-column">
 							<div class="row">
 

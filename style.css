@@ -62,15 +62,14 @@ body{
 /* Home Page Template */
 
 /* Header - Main Menu */
-body #page > header{
-    border-top: 4px solid #FFEB33;
-    background-color: #fdfdfd;
+body #page > header {
+    background-color: #fff159;
     border-bottom: 1px solid #eee;    
 }
 
 header .search{
     padding: 0.7rem 0;
-    background-color: #0000000a;
+    background-color: #fff159;
 }
 
 header .top-bar{
@@ -221,16 +220,16 @@ header .brand img{
     width: 23px;
     background-repeat: no-repeat;
     background-color: transparent;
-    border: none; 
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin: 8px;
 }
 
 .search-form input[type="search"]{
     background-color: #fff;
     border: none;
     font-weight: 500;
-    font-size: 110%;
-    padding: 0.3rem 1rem;
-    margin-right: 0.3rem;
 }
 
 
@@ -1170,6 +1169,25 @@ li.comment {
     font-weight: 500;
 }
 
+.search-form {
+    width: 100%;
+    background-color: #FFF;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 0 rgba(0,0,0,.2);
+}
+
+.search-field {
+    width: 90%;
+    padding: 10px 60px 10px 15px;    
+}
+
+.search-field:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .widget .search-form,
 .search .content-area .search-form {
     display: flex;
@@ -1198,7 +1216,8 @@ li.comment {
 .content-area .widget .search-form input[type="search"],
 .shop-content .widget .search-form input[type="search"],
 .search .search-form input[type="search"] {
-    background-color: #f1f1f1;
+    background-color: #FFF;
+    border-right: 1px solid #e6e6e6;
 }
 
 .shop-content .widget_rss ul{
