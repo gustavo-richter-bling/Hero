@@ -215,6 +215,7 @@ header .brand img{
 
 /* Search Box */
 .nav-search {
+	width: 100%;
 	padding: 8px 1px;
 	overflow: auto;
 	height: 56px;
@@ -262,6 +263,10 @@ header .brand img{
     line-height: 1em;
 }
 
+.nav-search-btn:focus {
+	outline: none;
+}
+
 button.nav-search-btn:before {
 	content: '';
     display: block;
@@ -280,7 +285,7 @@ button.nav-search-btn .nav-icon-search:before {
 	font-family: 'Font Awesome 5 Free';
 	content: '\f002';
     vertical-align: top;
-	font-weight: 900;
+	font-weight: 600;
 }
 
 
