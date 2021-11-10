@@ -14,6 +14,7 @@ require_once get_template_directory() . '/inc/customizer.php';
  */
  function hero_theme_scripts(){
    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/bootstrap.min.js', array( 'jquery' ), '4.5.1', true );
+   wp_enqueue_style( 'font-awesome-free', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' );
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/inc/bootstrap.min.css', array(), '5.0.0', 'all' );
     //Theme's main stylesheet
     wp_enqueue_style( 'hero-theme-style', get_stylesheet_uri(), array(), '1.0', 'all' );
