@@ -91,3 +91,84 @@ function hero_theme_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['span.items'] = ob_get_clean();
 	return $fragments;
 }
+
+/**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ */
+add_action( 'widgets_init', 'fancy_lab_sidebars' );
+function fancy_lab_sidebars(){
+	register_sidebar( array(
+		'name'          => esc_html__( 'Fancy Lab Main Sidebar', 'fancy-lab' ),
+		'id'            => 'fancy-lab-sidebar-1',
+		'description'   => esc_html__( 'Drag and drop your widgets here.', 'fancy-lab' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Shop', 'fancy-lab' ),
+		'id'            => 'fancy-lab-sidebar-shop',
+		'description'   => esc_html__( 'Drag and drop your widgets here.', 'fancy-lab' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar 1', 'fancy-lab' ),
+		'id'            => 'fancy-lab-sidebar-footer1',
+		'description'   => esc_html__( 'Drag and drop your widgets here.', 'fancy-lab' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar 2', 'fancy-lab' ),
+		'id'            => 'fancy-lab-sidebar-footer2',
+		'description'   => esc_html__( 'Drag and drop your widgets here.', 'fancy-lab' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar 3', 'fancy-lab' ),
+		'id'            => 'fancy-lab-sidebar-footer3',
+		'description'   => esc_html__( 'Drag and drop your widgets here.', 'fancy-lab' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s widget-wrapper">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );	
+}
+
+/**
+ * Adds custom classes to the array of body classes.
+ */
+function fancy_lab_body_classes( $classes ) {
+
+	// Adds a class of no-sidebar to sites without active sidebar.
+	if ( ! is_active_sidebar( 'fancy-lab-sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	if ( ! is_active_sidebar( 'fancy-lab-sidebar-shop' ) ) {
+		$classes[] = 'no-sidebar-shop';
+	}
+
+	if ( ! is_active_sidebar( 'fancy-lab-sidebar-footer1' ) && ! is_active_sidebar( 'fancy-lab-sidebar-footer2' ) && ! is_active_sidebar( 'fancy-lab-sidebar-footer3' ) ) {
+		$classes[] = 'no-sidebar-footer';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'fancy_lab_body_classes' );

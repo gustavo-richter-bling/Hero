@@ -34,7 +34,7 @@
 								<?php endif;?>
 							</a>
 						</div>
-						<div class="col-12 col-md-8 col-lg-8 text-center d-md-flex align-items-center">
+						<div class="col-12 col-md-8 col-lg-10 text-center d-md-flex align-items-center">
 							<?php get_search_form(); ?>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 			<section class="top-bar">
 				<div class="container">
 					<div class="row d-flex align-items-center">
-						<div class="col-12 col-md-9 col-lg-10 second-column">
+						<div class="col-12 col-md-9 col-lg-12 second-column">
 							<div class="row">
 
 								<?php if( class_exists( 'WooCommerce' ) ): ?>
