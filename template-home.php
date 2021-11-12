@@ -9,8 +9,17 @@ get_header(); ?>
 <div class="content-area">
 	<main>
 		<section class="slider">
-			<div class="flexslider">
-			  
+			<div class="container-fluid">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="<?php echo get_theme_mod('first_slide') ?>" height="" width=""></div>
+					<div class="swiper-slide"><img src="<?php echo get_theme_mod('second_slide') ?>" height="" width=""></div>
+					<div class="swiper-slide"><img src="<?php echo get_theme_mod('third_slide') ?>" height="" width=""></div>
+					
+				</div>
+				<div class="swiper-pagination"></div>
+				</div>
+			</ul>			  
 			</div>
 		</section>
 
@@ -157,5 +166,23 @@ get_header(); ?>
 		</section>											
 	</main>
 </div>
-
+<!-- Initialize Swiper -->
+<script>	
+	var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+</script>
 <?php get_footer(); ?>

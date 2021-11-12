@@ -13,16 +13,17 @@ require_once get_template_directory() . '/inc/customizer.php';
   * Enqueue scripts and styles
  */
  function hero_theme_scripts(){
-   wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/bootstrap.min.js', array( 'jquery' ), '4.5.1', true );
-   wp_enqueue_style( 'font-awesome-free', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' );
+   	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/bootstrap.min.js', array( 'jquery' ), '4.5.1', true );
+	wp_enqueue_script( 'swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', true );
+
+   	wp_enqueue_style( 'font-awesome-free', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' );
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/inc/bootstrap.min.css', array(), '5.0.0', 'all' );
+	wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
     //Theme's main stylesheet
     wp_enqueue_style( 'hero-theme-style', get_stylesheet_uri(), array(), '1.0', 'all' );
 
     // Google Fonts
-   wp_enqueue_style( 'rajdhani', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script' );
-   wp_enqueue_style( 'crimson ', 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' );
-   wp_enqueue_style( 'dancing', 'https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap' );
+  	wp_enqueue_style( 'rajdhani', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script' );
 
  }
 add_action( 'wp_enqueue_scripts', 'hero_theme_scripts' );
@@ -172,3 +173,43 @@ function fancy_lab_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'fancy_lab_body_classes' );
+
+
+add_action( 'customize_register', 'themename_customize_register' );
+function themename_customize_register($wp_customize) { 
+
+	$wp_customize->add_section( 'slides', array(
+		'title'          => 'Slides',
+		'priority'       => 25,
+	) );
+
+	$wp_customize->add_setting( 'first_slide', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'first_slide', array(
+		'label'   => 'First Slide',
+		'section' => 'slides',
+		'settings'   => 'first_slide',
+	) ) );
+
+	$wp_customize->add_setting( 'second_slide', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'second_slide', array(
+		'label'   => 'Second Slide',
+		'section' => 'slides',
+		'settings'   => 'second_slide',
+	) ) );
+
+	$wp_customize->add_setting( 'third_slide', array(
+		'default'        => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'third_slide', array(
+		'label'   => 'Third Slide',
+		'section' => 'slides',
+		'settings'   => 'third_slide',
+	) ) );
+}
