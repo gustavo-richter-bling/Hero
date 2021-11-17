@@ -9,17 +9,15 @@ get_header(); ?>
 <div class="content-area">
 	<main>
 		<section class="slider">
-			<div class="container-fluid">
-			<div class="swiper mySwiper">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="<?php echo get_theme_mod('first_slide') ?>" height="" width=""></div>
-					<div class="swiper-slide"><img src="<?php echo get_theme_mod('second_slide') ?>" height="" width=""></div>
-					<div class="swiper-slide"><img src="<?php echo get_theme_mod('third_slide') ?>" height="" width=""></div>
-					
-				</div>
-				<div class="swiper-pagination"></div>
-				</div>
-			</ul>			  
+			<div class="container-fluid remov-padding">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="<?php echo get_theme_mod('first_slide') ?>" height="" width=""></div>
+						<div class="swiper-slide"><img src="<?php echo get_theme_mod('second_slide') ?>" height="" width=""></div>
+						<div class="swiper-slide"><img src="<?php echo get_theme_mod('third_slide') ?>" height="" width=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>			  
 			</div>
 		</section>
 
@@ -172,7 +170,7 @@ get_header(); ?>
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         },
         pagination: {

@@ -23,7 +23,9 @@ require_once get_template_directory() . '/inc/customizer.php';
     wp_enqueue_style( 'hero-theme-style', get_stylesheet_uri(), array(), '1.0', 'all' );
 
     // Google Fonts
-  	wp_enqueue_style( 'rajdhani', 'https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700|Seaweed+Script' );
+  	wp_enqueue_style( 'Montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swapt' );
+
+	wp_enqueue_style( 'Open Sans', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap' );
 
  }
 add_action( 'wp_enqueue_scripts', 'hero_theme_scripts' );

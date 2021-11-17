@@ -22,7 +22,7 @@
 			<section class="search">
 				<div class="container">
 					<div class="row d-flex align-items-center">
-						<div class="col-12 col-md-3 col-lg-2 brand text-center text-md-left">
+						<div class="col-4 col-md-3 col-lg-2 brand text-center text-md-left">
 							<a href="<?php echo esc_url( home_url('/') );?>">
 								<?php 
 								if( has_custom_logo() ):
@@ -34,7 +34,7 @@
 								<?php endif;?>
 							</a>
 						</div>
-						<div class="col-12 col-md-8 col-lg-10 text-center d-md-flex align-items-center">
+						<div class="col-8 col-md-8 col-lg-10 text-center d-md-flex align-items-center">
 							<?php get_search_form(); ?>
 						</div>
 					</div>
@@ -45,9 +45,30 @@
 					<div class="row d-flex align-items-center">
 						<div class="col-12 col-md-9 col-lg-12 second-column">
 							<div class="row">
+								<div class="col-2 col-lg-8">
+									<nav class="ml-auto main-menu navbar navbar-expand-md navbar-light" role="navigation">
+								        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-main-menu" aria-controls="bs-main-menu" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'fancy-lab' ) ?>">
+								            <span class="navbar-toggler-icon"></span>
+								        </button>									
+										<?php 
+											wp_nav_menu( 
+												array( 
+													'theme_location' 	=> 'hero_theme_main_menu', 
+													'depth' 			=> 3,
+													'container'         => 'div',
+													'container_class'   => 'collapse navbar-collapse',
+													'container_id'      => 'bs-main-menu',
+													'menu_class'        => 'navbar-nav mr-auto',
+													'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+													'walker'            => new WP_Bootstrap_Navwalker(),
+												) 
+											); 
+										?>												
+									</nav>											
+								</div>
 
 								<?php if( class_exists( 'WooCommerce' ) ): ?>
-								<div class="col-12 account">
+								<div class="col-4 col-lg-4 account">
 							        <div class="navbar-expand">
 							            <ul class="navbar-nav float-left">
 							            	<?php if ( is_user_logged_in() ) : ?>
@@ -70,28 +91,6 @@
 									</div>
 								</div>
 								<?php endif; ?>
-
-								<div class="col-12">
-									<nav class="ml-auto main-menu navbar navbar-expand-md navbar-light" role="navigation">
-								        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bs-main-menu" aria-controls="bs-main-menu" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'fancy-lab' ) ?>">
-								            <span class="navbar-toggler-icon"></span>
-								        </button>									
-										<?php 
-											wp_nav_menu( 
-												array( 
-													'theme_location' 	=> 'hero_theme_main_menu', 
-													'depth' 			=> 3,
-													'container'         => 'div',
-													'container_class'   => 'collapse navbar-collapse',
-													'container_id'      => 'bs-main-menu',
-													'menu_class'        => 'navbar-nav mr-auto',
-													'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-													'walker'            => new WP_Bootstrap_Navwalker(),
-												) 
-											); 
-										?>												
-									</nav>											
-								</div>
 							</div>
 						</div>
 					</div>

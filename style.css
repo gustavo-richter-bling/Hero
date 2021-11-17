@@ -41,16 +41,25 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 # Media Queries
 --------------------------------------------------------------*/
 
-body{
-    /*font-family: 'rajdhani', sans-serif;*/
-    
-    /*Remover se não ficar OK*/
-    font-family: 'crimson', sans-serif;
+body {
+    font-family: 'Open Sans', sans-serif;
     background-color:#fdfdfd!important;
     color:#444!important;
 }
 
-.content-area{
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.remov-padding {
+    padding: var(--remove-padding);
+} 
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content-area {
     min-height: 500px;
     padding: 3rem 0;    
 }
@@ -73,7 +82,7 @@ header .search{
 }
 
 header .top-bar{
-    padding: 1rem 0 0 0;
+    padding: 0 0 0 0;
 }
 
 header p.site-title{
@@ -99,15 +108,16 @@ header .brand img{
     height: auto;
 }
 
-.account{
-    font-weight: 700;
+.account {
+    font-weight: 400;
+    padding-top: 7px;
 }
 
-.account ul li a{
+.account ul li a {
     padding: 0 1rem 0 0 !important;
 }
 
-.main-menu{
+.main-menu {
     padding: 0;
 }
 
@@ -122,6 +132,7 @@ header .brand img{
 .main-menu ul li{ 
     display: inline;  
     margin: 0 5px 0 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .main-menu ul li:last-child{ 
@@ -130,9 +141,14 @@ header .brand img{
 
 .main-menu > ul li a,
 .navbar-light .navbar-nav .nav-link{  
-    color: #303030; 
+    color: #3339; 
     text-decoration: none;
-    padding: 7px 15px 20px;
+    padding: 7px 15px 5px;
+    font-weight: 400;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(51,51,51,.9);
 }
 
 .main-menu ul li a.nav-link:first-child{ 
@@ -152,14 +168,14 @@ header .brand img{
     color: #fff;
 }
 
-.main-menu .navbar-nav .active>.nav-link{ 
-    color: #CA2424; 
-}
-
 .main-menu .dropdown-item:focus, 
 .main-menu .dropdown-item:hover {
     color: #fff;
     background-color: #272c33;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #3339;
 }
 
 .main-menu .dropdown:hover>.dropdown-menu, 
@@ -321,6 +337,10 @@ button.nav-search-btn .nav-icon-search:before {
     object-fit: cover;
   }
 
+  .swiper-pagination-bullet {
+      background-color: #fff;
+  }
+
 /* Cart */
 .cart{
     padding: 0;
@@ -363,7 +383,7 @@ button.nav-search-btn .nav-icon-search:before {
 }
 
 .home main .section-title h2{
-    font-family: 'Seaweed Script';
+    font-family: 'Montserrat';
     font-size: 3rem;    
     position: relative;
     display: inline-block;
@@ -1461,7 +1481,7 @@ li.comment {
 }
 .content-area img{
     max-width: 100%;
-    height: auto;
+    height: 340px;
 }
 
 .content-area .wp-caption.alignleft {
@@ -1529,17 +1549,17 @@ embed, iframe, object {
     max-width: 100%;
 }
 
-a{
-    color: #d35758;
+a {
+    color: #333;
 }
 
 a:hover {
-    color: #af4142;
+    color: #000;
     text-decoration: none;
 }
 
-p, ul li a, .nav-links a, .nav-links span{
-    font-size: 1.15rem;
+p, ul li a, .nav-links a, .nav-links span {
+    font-size: 14px;
 }
 
 .size-auto, 
